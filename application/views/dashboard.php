@@ -20,20 +20,6 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-folder"></i></span>
-
-                    <div class="info-box-content">
-                        <a href="<?=base_url('menu');?>"><span class="info-box-text">Klik menuju halaman <i
-                                    class="fas fa-arrow-right"></i></span></a>
-                        <span class="info-box-number">Menu Dashboard</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
             <?php if($this->session->userdata('level')=='Admin'): ?>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box mb-3">
@@ -107,6 +93,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- /.col -->
+            <?php endif; ?>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box mb-3">
                     <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-folder"></i></span>
@@ -121,6 +108,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- /.col -->
+            <?php if($this->session->userdata('level')=='Admin'): ?>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box mb-3">
                     <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-folder"></i></span>
