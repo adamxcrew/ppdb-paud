@@ -67,7 +67,6 @@
 											
 												$attr = [
 													'id'=>'wali_id',
-													'required'=>'required',
 													'class'=>'form-control select2'
 												];
 												echo form_dropdown('wali_id', $wali, isset($edit)?$row['wali_id']:'',$attr);
