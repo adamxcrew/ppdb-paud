@@ -55,6 +55,11 @@ class Biodata extends CI_Controller {
 	public function save()
 	{
 		$id = $this->input->post('idsiswa',true);
+		if($this->input->post('wali_id',true)==''){
+			$wali_id = null;
+		}else{
+			$wali_id = $this->input->post('wali_id',true);
+		}
 		if($id==''){
 			$data = [
 				'orang_tua_id'=>$this->input->post('orang_tua_id',true),
@@ -83,7 +88,7 @@ class Biodata extends CI_Controller {
 				'u_baju'=>$this->input->post('u_baju',true),
 				'no_daftar'=>time(),
 				'status'=>'Baru',
-				'wali_id'=>$this->input->post('wali_id',true)
+				'wali_id'=>$wali_id
 			];
 			$this->biodata_m->tambahData($data);
 			$this->session->set_flashdata('success','Anda berhasil menambahkan data Orang Tua');
@@ -114,7 +119,7 @@ class Biodata extends CI_Controller {
 				'kelas'=>$this->input->post('kelas',true),
 				'u_baju'=>$this->input->post('u_baju',true),
 				'no_daftar'=>time(),
-				'wali_id'=>$this->input->post('wali_id',true)
+				'wali_id'=>$wali_id
 			];
 			$this->biodata_m->editData($data,$id);
 			$this->session->set_flashdata('success','Anda berhasil mengubah data Orang Tua');
