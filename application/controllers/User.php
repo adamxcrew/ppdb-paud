@@ -37,18 +37,19 @@ class User extends CI_Controller {
             }
         }else{
             $password = $this->input->post('password',true);
+			$level = $this->input->post('level',true);
             if($password==''){
                 $data = [
                     'nama_lengkap'=>$this->input->post('nama_lengkap',true),
                     'username'=>$this->input->post('username',true),
-                    'level'=>'Admin'
+                    'level'=>$level
                 ];
             }else{
                 $data = [
                     'nama_lengkap'=>$this->input->post('nama_lengkap',true),
                     'username'=>$this->input->post('username',true),
                     'password'=>password_hash($this->input->post('password',true),PASSWORD_DEFAULT),
-                    'level'=>'Admin'
+                    'level'=>$level
                 ];
             }
             $this->user_m->editData($data,$id);

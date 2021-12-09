@@ -26,6 +26,7 @@ function edit(x) {
                 $('[name="idpengguna"]').val(data.idpengguna);
                 $('[name="nama_lengkap"]').val(data.nama_lengkap);
                 $('[name="username"]').val(data.username);
+                $('[name="level"]').val(data.level);
             }
         });
     }
@@ -123,6 +124,7 @@ function edit(x) {
                     <div class="form-group">
                         <label for="nama_lengkap">Nama Pengguna <span class="text-danger">*</span></label>
                         <input type="hidden" name="idpengguna">
+                        <input type="hidden" name="level">
                         <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
                     </div>
                     <div class="form-group">
